@@ -61,3 +61,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
    - Status Active switch.
    - Back, Cancel, and Save changes buttons with visual loading indicators.
 
+**Live Demo**
+
+Visit the live deployed site to view the application in action:
+- **Website:** https://xubitar-assignment.onrender.com
+
