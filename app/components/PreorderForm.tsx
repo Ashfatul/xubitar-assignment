@@ -43,7 +43,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
     name: initialData?.name || "",
     products: initialData?.products ?? 1,
     preorderWhen: initialData?.preorderWhen || "regardless-of-stock",
-    startsAt: formatForInput(initialData?.startsAt),
+    startsAt: initialData?.startsAt ? formatForInput(initialData.startsAt) : formatForInput(new Date()),
     endsAt: formatForInput(initialData?.endsAt),
     isActive: initialData?.isActive ?? true,
   });
@@ -72,10 +72,6 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
       setError("Name is required");
       return;
     }
-    if (!formData.startsAt) {
-      setError("Start date is required");
-      return;
-    }
 
     setLoading(true);
     setError(null);
@@ -84,7 +80,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
       name: formData.name,
       products: formData.products,
       preorderWhen: formData.preorderWhen,
-      startsAt: new Date(formData.startsAt),
+      startsAt: formData.startsAt ? new Date(formData.startsAt) : new Date(),
       endsAt: formData.endsAt ? new Date(formData.endsAt) : null,
       isActive: formData.isActive,
     };
@@ -276,7 +272,6 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                   type="datetime-local"
                   id="startsAt"
                   name="startsAt"
-                  required
                   value={formData.startsAt}
                   onChange={handleChange}
                   className="w-full max-w-md px-3.5 py-2 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
@@ -331,7 +326,9 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                     }`}
                   />
                 </button>
-                <span className="text-xs text-zinc-600 font-semibold select-none">Active</span>
+                <span className="text-xs text-zinc-600 font-semibold select-none">
+                  {formData.isActive ? "Active" : "Inactive"}
+                </span>
               </div>
             </div>
           </div>
