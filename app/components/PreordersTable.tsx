@@ -271,7 +271,7 @@ export default function PreordersTable({
           <div className="relative" ref={sortDropdownRef}>
             <button
               onClick={() => setShowSortDropdown(!showSortDropdown)}
-              className="p-2 border border-zinc-200 hover:border-zinc-400 rounded-lg transition-colors cursor-pointer text-zinc-600 bg-white"
+              className="p-1 border border-zinc-200 hover:border-zinc-400 rounded-lg transition-colors cursor-pointer text-zinc-600 bg-white"
               aria-label="Sort options"
             >
               <svg
@@ -290,7 +290,7 @@ export default function PreordersTable({
             </button>
 
             {showSortDropdown && (
-              <div className="absolute right-0 mt-2 w-56 bg-white border border-zinc-200 rounded-lg shadow-lg z-30 p-2 text-sm text-zinc-800">
+              <div className="absolute right-0 mt-2 w-35 bg-white border border-zinc-200 rounded-lg shadow-lg z-30 py-2 px-2 text-sm text-zinc-800">
                 <div className="px-2.5 py-1.5 text-xs font-semibold text-zinc-400 tracking-wider">
                   Sort by
                 </div>
@@ -303,7 +303,7 @@ export default function PreordersTable({
                   ].map((option) => (
                     <label
                       key={option.key}
-                      className="flex items-center gap-2.5 px-2.5 py-1.5 hover:bg-zinc-50 rounded-md cursor-pointer text-xs"
+                      className="flex items-center gap-2.5 px-0 py-1.5 mb-0 hover:bg-zinc-50 rounded-md cursor-pointer text-xs"
                     >
                       <input
                         type="radio"
@@ -329,19 +329,7 @@ export default function PreordersTable({
                     }`}
                   >
                     <span className="flex items-center gap-2">
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 15.75l7.5-7.5 7.5 7.5"
-                        />
-                      </svg>
+                      <svg className="w-3 h-3" strokeWidth="2" viewBox="0 0 640 640"><path d="M342.6 73.4C330.1 60.9 309.8 60.9 297.3 73.4L137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7C149.8 291.2 170.1 291.2 182.6 278.7L288 173.3L288 544C288 561.7 302.3 576 320 576C337.7 576 352 561.7 352 544L352 173.3L457.4 278.7C469.9 291.2 490.2 291.2 502.7 278.7C515.2 266.2 515.2 245.9 502.7 233.4L342.7 73.4z"/></svg>
                       Ascending
                     </span>
                   </button>
@@ -355,17 +343,11 @@ export default function PreordersTable({
                   >
                     <span className="flex items-center gap-2">
                       <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
+                        className="w-3 h-3 text-black"
                         strokeWidth="2"
-                        viewBox="0 0 24 24"
+                        viewBox="0 0 640 640"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                        />
+                        <path d="M297.4 566.6C309.9 579.1 330.2 579.1 342.7 566.6L502.7 406.6C515.2 394.1 515.2 373.8 502.7 361.3C490.2 348.8 469.9 348.8 457.4 361.3L352 466.7L352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 466.7L182.6 361.3C170.1 348.8 149.8 348.8 137.3 361.3C124.8 373.8 124.8 394.1 137.3 406.6L297.3 566.6z"/>
                       </svg>
                       Descending
                     </span>
@@ -453,7 +435,7 @@ export default function PreordersTable({
                         {/* Edit Button */}
                         <Link
                           href={`/${row.id}/edit`}
-                          className="p-1.5 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 rounded-md transition-colors text-zinc-600"
+                          className="p-1 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 rounded-md transition-colors text-zinc-600"
                           aria-label="Edit preorder"
                         >
                           <svg
@@ -473,7 +455,7 @@ export default function PreordersTable({
                         {/* Delete Button */}
                         <button
                           onClick={() => handleDelete(row.id, row.name)}
-                          className="p-1.5 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 hover:text-red-600 rounded-md transition-colors text-zinc-600 cursor-pointer"
+                          className="p-1 border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 hover:text-red-600 rounded-md transition-colors text-zinc-600 cursor-pointer"
                           aria-label="Delete preorder"
                         >
                           <svg

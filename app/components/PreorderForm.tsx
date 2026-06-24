@@ -134,7 +134,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
           <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="px-4 py-2 text-xs font-semibold text-zinc-700 hover:text-black transition-colors rounded-lg border border-transparent hover:border-zinc-200 bg-transparent hover:bg-white"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-zinc-200 hover:border-zinc-400 bg-white hover:bg-zinc-50 rounded-lg text-xs font-semibold text-zinc-700 transition-colors shadow-xs"
             >
               Cancel
             </Link>
@@ -190,7 +190,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
             )}
 
             {/* Field 1: Name */}
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+            <div className="py-4 mx-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
               <div className="md:col-span-1">
                 <label htmlFor="name" className="text-xs font-bold text-zinc-900 flex items-center">
                   Name<span className="text-red-500 ml-0.5">*</span>
@@ -214,7 +214,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
             </div>
 
             {/* Field 2: Products */}
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+            <div className="py-4 mx-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
               <div className="md:col-span-1">
                 <label htmlFor="products" className="text-xs font-bold text-zinc-900">
                   Products
@@ -238,7 +238,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
             </div>
 
             {/* Field 3: Preorder when */}
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+            <div className="py-4 mx-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
               <div className="md:col-span-1">
                 <label htmlFor="preorderWhen" className="text-xs font-bold text-zinc-900">
                   Preorder when
@@ -262,7 +262,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
             </div>
 
             {/* Field 4: Starts at */}
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+            <div className="py-4 mx-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
               <div className="md:col-span-1">
                 <label htmlFor="startsAt" className="text-xs font-bold text-zinc-900">
                   Starts at
@@ -285,7 +285,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
             </div>
 
             {/* Field 5: Ends at */}
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+            <div className="py-4 mx-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
               <div className="md:col-span-1">
                 <label htmlFor="endsAt" className="text-xs font-bold text-zinc-900">
                   Ends at
@@ -307,7 +307,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
             </div>
 
             {/* Field 6: Status */}
-            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+            <div className="py-4 mx-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
               <div className="md:col-span-1">
                 <span className="text-xs font-bold text-zinc-900">Status</span>
                 <p className="text-[11px] text-zinc-500 mt-1 max-w-[200px]">
@@ -318,7 +318,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                 <button
                   type="button"
                   onClick={handleToggleActive}
-                  className={`w-11 h-6 rounded-[4px] p-0.5 transition-colors duration-200 ease-in-out cursor-pointer relative flex items-center ${
+                  className={`w-10 h-6 rounded-[8px] m-[4px] transition-colors duration-200 ease-in-out cursor-pointer relative flex items-center ${
                     formData.isActive ? "bg-black" : "bg-zinc-200"
                   }`}
                   aria-label={`Toggle active state, current: ${
@@ -326,8 +326,8 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                   }`}
                 >
                   <span
-                    className={`w-5 h-5 rounded-[4px] bg-white shadow-sm transform transition-transform duration-200 ease-in-out ${
-                      formData.isActive ? "translate-x-5" : "translate-x-0"
+                    className={`w-4 h-4 rounded-[4px] bg-white shadow-sm transform transition-transform duration-200 ease-in-out ${
+                      formData.isActive ? "translate-x-5" : "translate-x-1"
                     }`}
                   />
                 </button>
@@ -337,7 +337,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
           </div>
 
           {/* Form Footer */}
-          <div className="p-6 bg-zinc-50/50 border-t border-zinc-100 flex items-center justify-end gap-2">
+          <div className="py-4 mx-5 bg-zinc-50/50 border-t border-zinc-100 flex items-center justify-end gap-2">
             <Link
               href="/"
               className="px-4 py-2 text-xs font-semibold text-zinc-700 hover:text-black transition-colors rounded-lg border border-zinc-200 hover:border-zinc-300 bg-white"
