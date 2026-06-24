@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { deletePreorder, togglePreorderStatus } from "../lib/actions";
+import Checkbox from "./Checkbox";
 
 interface Preorder {
   id: string;
@@ -364,11 +365,10 @@ export default function PreordersTable({
             <thead>
               <tr className="border-b border-zinc-100 text-[11px] uppercase tracking-wider text-zinc-400 bg-zinc-50/50">
                 <th className="p-1 w-12 text-center align-middle">
-                  <input
-                    type="checkbox"
+                  <Checkbox
                     checked={isAllSelected}
                     onChange={handleSelectAll}
-                    className="w-4 h-4 border border-zinc-300 rounded cursor-pointer checked:bg-black checked:border-black accent-black"
+                    ariaLabel="Select all preorders"
                   />
                 </th>
                 <th className="p-1 font-semibold text-zinc-500">Name</th>
@@ -394,13 +394,12 @@ export default function PreordersTable({
                     className="border-b border-zinc-100 hover:bg-zinc-50/50 transition-colors text-xs text-zinc-700"
                   >
                     <td className="p-1 text-center align-middle">
-                      <input
-                        type="checkbox"
+                      <Checkbox
                         checked={selectedIds.includes(row.id)}
                         onChange={(e) =>
                           handleSelectRow(row.id, e.target.checked)
                         }
-                        className="w-4 h-4 border border-zinc-300 rounded cursor-pointer checked:bg-black checked:border-black accent-black"
+                        ariaLabel={`Select preorder ${row.name}`}
                       />
                     </td>
                     <td className="p-1 font-bold text-black">{row.name}</td>
