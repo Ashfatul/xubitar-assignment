@@ -8,6 +8,38 @@ This is a Next.js 16 application called **Preorder Manager**. It consists of a p
 - **SQLite**
 - **Tailwind CSS v4**
 
+## File Structure
+
+```text
+xubitar-assignment/
+├─ app/
+│  ├─ [id]/edit/page.tsx
+│  ├─ components/
+│  │  ├─ Checkbox.tsx
+│  │  ├─ PreorderForm.tsx
+│  │  └─ PreordersTable.tsx
+│  ├─ create/page.tsx
+│  ├─ generated/prisma/
+│  ├─ lib/
+│  │  ├─ actions.ts
+│  │  └─ db.ts
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  └─ page.tsx
+├─ docs/
+│  └─ requirements.md
+├─ prisma/
+│  ├─ migrations/
+│  ├─ schema.prisma
+│  └─ seed.ts
+├─ public/
+├─ .env.example
+├─ next.config.ts
+├─ package.json
+├─ prisma.config.ts
+└─ README.md
+```
+
 ---
 
 ## Getting Started & Local Setup

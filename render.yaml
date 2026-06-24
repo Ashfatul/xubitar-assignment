@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: xubitar-preorder-manager
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install --build-from-source && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/var/data/dev.db
