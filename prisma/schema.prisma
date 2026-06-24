@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Preorder {
+  id           String    @id @default(uuid())
+  name         String
+  products     Int       @default(1)
+  preorderWhen String    // "regardless-of-stock" | "out-of-stock"
+  startsAt     DateTime
+  endsAt       DateTime?
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
