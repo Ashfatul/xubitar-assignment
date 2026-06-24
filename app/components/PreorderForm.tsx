@@ -244,16 +244,28 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                 </p>
               </div>
               <div className="md:col-span-2">
-                <select
-                  id="preorderWhen"
-                  name="preorderWhen"
-                  value={formData.preorderWhen}
-                  onChange={handleChange}
-                  className="w-full max-w-md px-3.5 py-2 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 bg-white text-zinc-800"
-                >
-                  <option value="regardless-of-stock">regardless-of-stock</option>
-                  <option value="out-of-stock">out-of-stock</option>
-                </select>
+                <div className="relative w-full max-w-md">
+                  <select
+                    id="preorderWhen"
+                    name="preorderWhen"
+                    value={formData.preorderWhen}
+                    onChange={handleChange}
+                    className="w-full appearance-none px-3.5 py-2 pr-10 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 bg-white text-zinc-800"
+                  >
+                    <option value="regardless-of-stock">regardless-of-stock</option>
+                    <option value="out-of-stock">out-of-stock</option>
+                  </select>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    className="pointer-events-none absolute right-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-zinc-500"
+                  >
+                    <path d="M5 7.5L10 12.5L15 7.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
             </div>
 
