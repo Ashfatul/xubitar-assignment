@@ -204,7 +204,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="e.g. Multi variant 3"
-                  className="w-full max-w-md px-3.5 py-2 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
+                  className="w-full max-w-full sm:max-w-md px-3.5 py-2 text-xs sm:text-sm border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
                 />
               </div>
             </div>
@@ -244,13 +244,13 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                 </p>
               </div>
               <div className="md:col-span-2">
-                <div className="relative w-full max-w-md">
+                <div className="relative w-full max-w-full sm:max-w-md">
                   <select
                     id="preorderWhen"
                     name="preorderWhen"
                     value={formData.preorderWhen}
                     onChange={handleChange}
-                    className="w-full appearance-none px-3.5 py-2 pr-10 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 bg-white text-zinc-800"
+                    className="w-full appearance-none px-3.5 py-2 pr-10 text-xs sm:text-sm border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 bg-white text-zinc-800"
                   >
                     <option value="regardless-of-stock">regardless-of-stock</option>
                     <option value="out-of-stock">out-of-stock</option>
@@ -286,7 +286,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                   name="startsAt"
                   value={formData.startsAt}
                   onChange={handleChange}
-                  className="w-full max-w-md px-3.5 py-2 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
+                  className="w-full max-w-full sm:max-w-md px-3.5 py-2 text-xs sm:text-sm border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
                 />
               </div>
             </div>
@@ -308,7 +308,7 @@ export default function PreorderForm({ initialData, isEdit = false }: PreorderFo
                   name="endsAt"
                   value={formData.endsAt}
                   onChange={handleChange}
-                  className="w-full max-w-md px-3.5 py-2 text-xs border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
+                  className="w-full max-w-full sm:max-w-md px-3.5 py-2 text-xs sm:text-sm border border-zinc-200 rounded-lg focus:outline-hidden focus:border-zinc-400 text-zinc-800"
                 />
               </div>
             </div>

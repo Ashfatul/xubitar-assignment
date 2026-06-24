@@ -250,7 +250,7 @@ export default function PreordersTable({
       {/* Main card wrapper */}
       <div className="bg-white rounded-xl border border-zinc-200 overflow-visible">
         {/* Card header toolbar */}
-        <div className="flex items-center justify-between p-4 border-b border-zinc-100 relative">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 border-b border-zinc-100 relative gap-3 sm:gap-0">
           {/* Tabs Filter */}
           <div className="flex rounded-lg p-0.5">
             {(["all", "active", "inactive"] as const).map((tab) => (
@@ -269,7 +269,7 @@ export default function PreordersTable({
           </div>
 
           {/* Sort Dropdown */}
-          <div className="relative" ref={sortDropdownRef}>
+          <div className="relative ml-auto sm:ml-0" ref={sortDropdownRef}>
             <button
               onClick={() => setShowSortDropdown(!showSortDropdown)}
               className="p-1 border border-zinc-200 hover:border-zinc-400 rounded-lg transition-colors cursor-pointer text-zinc-600 bg-white"
@@ -360,8 +360,8 @@ export default function PreordersTable({
         </div>
 
         {/* Table container */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        <div className="overflow-x-auto px-3 sm:px-0">
+          <table className="min-w-[900px] w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-zinc-100 text-[11px] uppercase tracking-wider text-zinc-400 bg-zinc-50/50">
                 <th className="p-1 w-12 text-center align-middle">
@@ -402,13 +402,11 @@ export default function PreordersTable({
                         ariaLabel={`Select preorder ${row.name}`}
                       />
                     </td>
-                    <td className="p-1 font-bold text-black">{row.name}</td>
+                    <td className="p-1 font-bold text-black break-words">{row.name}</td>
                     <td className="p-1">{row.products}</td>
                     <td className="p-1">{row.preorderWhen}</td>
-                    <td className="p-1">{formatDate(row.startsAt)}</td>
-                    <td className="p-1">
-                      {row.endsAt ? formatDate(row.endsAt) : ""}
-                    </td>
+                    <td className="p-1 whitespace-normal">{formatDate(row.startsAt)}</td>
+                    <td className="p-1">{row.endsAt ? formatDate(row.endsAt) : ""}</td>
                     <td className="p-1">
                       {/* Custom Toggle Switch */}
                       <button
